@@ -7,5 +7,6 @@ services:
     build:
       dockerfile: Dockerfile.dev
       context: ./
-    volumes: 
+    volumes:
+      - /home/bmsa/web-client/node_modules
       - ./:/home/bmsa/web-client
