@@ -9,6 +9,7 @@ import RememberPassword from "../pages/RememberPassword/RememberPassword";
 const AuthRouter = (
   <Switch>
     <Route exact path="/" component={MainPage} />
+    <Route path="/:product_id" component={MainPage} /> {/* Product detail */}
     <Route render={() => <Redirect to="/" />} />
   </Switch>
 );
@@ -19,6 +20,11 @@ const GuestRouter = (
     <Route exact path="/login" component={Login} />
     <Route exact path="/signup" component={Signup} />
     <Route exact path="/remember-password" component={RememberPassword} />
+    <Route exact path="/cart" component={MainPage} /> {/* Cart */}
+    <Route exact path="/checkout" component={MainPage} /> {/* Checkout */}
+    <Route exact path="/checkout-completed" component={MainPage} />{" "}
+    {/* Checkout completed */}
+    <Route path="/:product_id" component={MainPage} /> {/* Product detail */}
     <Route render={() => <Redirect to="/" />} />
   </Switch>
 );
