@@ -45,9 +45,6 @@ const App = () => {
   const onSuccess = useMemo(
     () => (
       <>
-        <FadeInOut activate={resizing}>
-          <ResizingPage />
-        </FadeInOut>
         <Navigation userLoggedId={reduxState.loggedUserId} />
       </>
     ),
