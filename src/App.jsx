@@ -9,20 +9,14 @@ import PageLoad from "./components/Animations/PageLoad/PageLoad";
 import { MIN_SPLASH_SCREEN_TIME } from "./config/config";
 import { ThemeContext } from "./themes/ThemeContext";
 import AppStyles from "./App.styles";
-import FadeInOut from "./components/Animations/FadeInOut/FadeInOut";
-import useResizing from "./hooks/useResizing";
-import ResizingPage from "./components/LoadingPages/ResizingPage/ResizingPage";
 import ErrorBoundary from "react-error-boundary";
 import { setLoggedUser } from "./redux/app/app.actions";
-
-const RESIZING_REFRESH_TIME = +process.env.REACT_APP_RESIZE_REFRESH_TIME || 750;
 
 const App = () => {
   const dispatch = useDispatch();
   const reduxState = useSelector(state => state.app);
   const { theme } = useContext(ThemeContext);
   const [appError, setAppError] = useState(false);
-  const resizing = useResizing(RESIZING_REFRESH_TIME);
 
   useEffect(() => {
     if (!reduxState.appHasLoaded) {
@@ -48,7 +42,7 @@ const App = () => {
         <Navigation userLoggedId={reduxState.loggedUserId} />
       </>
     ),
-    [resizing, reduxState.loggedUserId]
+    [reduxState.loggedUserId]
   );
 
   return (
