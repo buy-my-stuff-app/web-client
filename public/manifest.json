@@ -1,6 +1,6 @@
 {
-  "short_name": "Web App",
-  "name": "Web App",
+  "short_name": "BuyMyStuffApp",
+  "name": "BuyMyStuffApp",
   "dir": "auto",
   "lang": "en",
   "icons": [
@@ -49,9 +49,9 @@
   "start_url": ".",
   "display": "fullscreen",
   "orientation": "portrait-primary",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
-  "categories": [],
+  "theme_color": "#FF6E6E",
+  "background_color": "#E0FBFC",
+  "categories": ["business", "shopping", "utilities"],
   "prefer_related_applications": false,
   "related_applications": [],
   "scope": "/",
