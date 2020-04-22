@@ -50,7 +50,7 @@
   "display": "fullscreen",
   "orientation": "portrait-primary",
   "theme_color": "#FF6E6E",
-  "background_color": "#E0FBFC",
+  "background_color": "#EFF1F3",
   "categories": ["business", "shopping", "utilities"],
   "prefer_related_applications": false,
   "related_applications": [],

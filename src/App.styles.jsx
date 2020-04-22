@@ -14,6 +14,7 @@ const AppStyles = createGlobalStyle`
   }
 
   body {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     font-size: ${({ theme }) => theme.fontSize};
     color: ${({ theme }) => theme.textColorPrimary};
     background-color: ${({ theme }) => theme.bgColorPrimary};
