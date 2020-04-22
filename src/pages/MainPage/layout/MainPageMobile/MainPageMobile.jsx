@@ -6,7 +6,7 @@ import Theme from "../../../../themes/Theme";
 const MainPageMobile = ({ theme }) => {
   return (
     <Styles theme={theme}>
-      <p>MainPageMobile 2</p>
+      <p>MainPageMobile</p>
     </Styles>
   );
 };
