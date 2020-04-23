@@ -1,13 +1,10 @@
-import axios from "axios";
+import axios from 'axios';
 axios.defaults.withCredentials = true;
 
-const BASE_URL =
-  process.env.NODE_ENV === "production"
-    ? process.env.REACT_APP_SERVER_URL
-    : "http://localhost:5000";
+const BASE_URL = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_SERVER_URL : 'http://localhost/api';
 
 const axiosService = axios.create({
-  baseURL: BASE_URL
+  baseURL: BASE_URL,
 });
 
 export default axiosService;
