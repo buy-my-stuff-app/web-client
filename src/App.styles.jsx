@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import colorWithOpacity from "./modules/helpers/colorWithOpacity/colorWithOpacity";
+import {createGlobalStyle} from 'styled-components';
+import colorWithOpacity from './modules/helpers/colorWithOpacity/colorWithOpacity';
 
 const AppStyles = createGlobalStyle`
   *,
@@ -15,23 +15,32 @@ const AppStyles = createGlobalStyle`
 
   body {
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-    font-size: ${({ theme }) => theme.fontSize};
-    color: ${({ theme }) => theme.textColorPrimary};
-    background-color: ${({ theme }) => theme.bgColorPrimary};
-    font-family: ${({ theme }) => theme.fontFamily};
+    font-size: ${({theme}) => theme.fontSize};
+    color: ${({theme}) => theme.textColorPrimary};
+    background-color: ${({theme}) => theme.bgColorPrimary};
+    font-family: ${({theme}) => theme.fontFamily};
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #root{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   a{
-    color: ${({ theme }) => theme.textColorPrimary};
+    color: ${({theme}) => theme.textColorPrimary};
     font-weight: bold;
     text-decoration: none;
     transition: color 300ms ease-in-out;
   }
 
   a:hover, a:active{
-    color: ${({ theme }) => colorWithOpacity(theme.textColorPrimary, 75)};
+    color: ${({theme}) => colorWithOpacity(theme.textColorPrimary, 75)};
   }
 `;
 

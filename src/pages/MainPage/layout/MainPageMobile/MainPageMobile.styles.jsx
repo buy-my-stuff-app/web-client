@@ -1,5 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Styles = styled.div`
-  background-color: ${({ theme }) => theme.bgColorPrimary};
+  background-color: ${({theme}) => theme.bgColorPrimary};
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 `;

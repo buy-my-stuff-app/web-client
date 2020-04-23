@@ -1,24 +1,14 @@
-import React, { useMemo } from "react";
-import PropTypes from "prop-types";
-import { animated, useTransition } from "react-spring";
+import React, {useMemo} from 'react';
+import PropTypes from 'prop-types';
+import {animated, useTransition} from 'react-spring';
 
-const PageLoad = ({
-  isLoading,
-  hasError,
-  onErrorComponent,
-  onSuccessComponent,
-  onLoadComponent,
-  transitionStyles
-}) => {
+const PageLoad = ({isLoading, hasError, onErrorComponent, onSuccessComponent, onLoadComponent, transitionStyles}) => {
   const loadingAnimation = useTransition(isLoading, null, transitionStyles);
-  const loadedComponent = useMemo(
-    () => (hasError ? onErrorComponent : onSuccessComponent),
-    [hasError, onErrorComponent, onSuccessComponent]
-  );
+  const loadedComponent = useMemo(() => (hasError ? onErrorComponent : onSuccessComponent), [hasError, onErrorComponent, onSuccessComponent]);
 
   if (isLoading) {
     return loadingAnimation.map(
-      ({ item, key, props }) =>
+      ({item, key, props}) =>
         item && (
           <animated.div key={key} style={props}>
             {onLoadComponent}
@@ -28,7 +18,7 @@ const PageLoad = ({
   }
 
   return loadingAnimation.map(
-    ({ item, key, props }) =>
+    ({item, key, props}) =>
       !item && (
         <animated.div key={key} style={props}>
           {loadedComponent}
@@ -46,8 +36,8 @@ PageLoad.propTypes = {
   transitionStyles: PropTypes.shape({
     from: PropTypes.object,
     enter: PropTypes.object,
-    leave: PropTypes.object
-  })
+    leave: PropTypes.object,
+  }),
 };
 
 PageLoad.defaultProps = {
@@ -56,10 +46,10 @@ PageLoad.defaultProps = {
   onLoadComponent: <></>,
   onErrorComponent: <></>,
   transitionStyles: {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 }
-  }
+    from: {opacity: 0, display: 'flex', flexDirection: 'column', flexGrow: 1},
+    enter: {opacity: 1, display: 'flex', flexDirection: 'column', flexGrow: 1},
+    leave: {opacity: 0, display: 'flex', flexDirection: 'column', flexGrow: 1},
+  },
 };
 
 export default PageLoad;
