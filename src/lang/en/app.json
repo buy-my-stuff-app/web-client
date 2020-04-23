@@ -1,0 +1,16 @@
+{
+  "components": {
+    "error": {
+      "app": {
+        "message": "An error happened when the app was loading",
+        "link": "You can reload the page"
+      }
+    },
+    "loading": {
+      "resizing": {
+        "message": "Recalculating elements..."
+      }
+    }
+  },
+  "test": "Testing i18n"
+}
